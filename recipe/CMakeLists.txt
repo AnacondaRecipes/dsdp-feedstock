@@ -2,7 +2,12 @@ cmake_minimum_required(VERSION 3.0)
 project (dsdp VERSION 5.8 LANGUAGES C)
 
 link_directories(${LIBRARY_PREFIX}/lib)
-find_library(BLAS_LIB openblas)
+if($ENV{blas_impl} STREQUAL "mkl")
+  find_library(BLAS_LIB mkl_rt)
+else()
+  find_library(BLAS_LIB openblas)
+endif()
+
 include_directories(include src/vecmat src/solver src/sdp)
 FILE (GLOB_RECURSE   SRCS   src/*.c)
 if(WIN32)
