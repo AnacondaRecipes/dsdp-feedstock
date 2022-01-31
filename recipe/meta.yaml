@@ -20,7 +20,9 @@ requirements:
     - cmake
     - {{ compiler("c") }}
     - make   # [unix]
-
+    - patch       # [not win]
+    - m2-patch    # [win]
+ 
   host:
     - mkl-devel  {{ mkl }}           # [blas_impl == "mkl"]
     - openblas-devel {{ openblas }}  # [blas_impl == "openblas"]
