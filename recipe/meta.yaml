@@ -15,7 +15,7 @@ source:
 build:
   # Openblas requires VS >=2015.  MKL is OK with VS 2008.
   skip: true  # [win and vc<14 and blas_impl == "openblas"]
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -26,7 +26,7 @@ requirements:
     - m2-patch    # [win]
  
   host:
-    - mkl-devel  {{ mkl }}           # [blas_impl == "mkl"]
+    - mkl-devel {{ mkl }}            # [blas_impl == "mkl"]
     - openblas-devel {{ openblas }}  # [blas_impl == "openblas"]
 
 test:
