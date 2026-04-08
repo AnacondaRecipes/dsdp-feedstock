@@ -1,5 +1,5 @@
 anaconda_config_version: 1
 upstream_sources:
   - webpage:
-      url: http://deb.debian.org/debian/pool/main/d/dsdp/
-      regex: dsdp_([\d.]+)\.orig\.tar\.gz
+      url: https://www.mcs.anl.gov/hs/software/DSDP/
+      regex: DSDP([\d.]+)\.tar\.gz
